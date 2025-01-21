@@ -1,10 +1,11 @@
+# Exported from Render on 2025-01-20T13:28:41Z
 services:
-  - type: web
-    name: anbuanime
-    env: docker
-    repo: https://github.com/anbuinfosec/anbuanime.git
-    plan: free
-    branch: main
-    envVars:
-      - key: PORT
-        value: 3000
+- type: web
+  name: anbuanime-api
+  runtime: node
+ repo: https://github.com/anbuinfosec/anbuanime.git
+  plan: free
+  region: oregon
+  buildCommand: npm install
+  startCommand: node lib/api.js
+version: "1"
